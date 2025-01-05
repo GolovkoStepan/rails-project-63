@@ -2,6 +2,8 @@
 
 require 'test_helper'
 
+require_relative '../../lib/hexlet_code/tag'
+
 class TestHexletCodeTag < Minitest::Test
   def test_br_tag
     assert { HexletCode::Tag.build('br') == '<br>' }
@@ -27,5 +29,16 @@ class TestHexletCodeTag < Minitest::Test
     assert { HexletCode::Tag.build('div') == '<div></div>' }
     assert { HexletCode::Tag.build('div') { 'Text' } == '<div>Text</div>' }
     assert { HexletCode::Tag.build('div', class: 'py-2') == '<div class="py-2"></div>' }
+  end
+
+  def test_form_tag
+    assert { HexletCode::Tag.build('form') == '<form></form>' }
+
+    assert do
+      expected = '<form url="/profile" class="hexlet-form">Text</form>'
+      actual   = HexletCode::Tag.build('form', url: '/profile', class: 'hexlet-form') { 'Text' }
+
+      expected == actual
+    end
   end
 end

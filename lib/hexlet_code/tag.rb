@@ -7,7 +7,8 @@ module HexletCode
       img: '<img%<attributes>s>',
       input: '<input%<attributes>s>',
       label: '<label%<attributes>s>%<content>s</label>',
-      div: '<div%<attributes>s>%<content>s</div>'
+      div: '<div%<attributes>s>%<content>s</div>',
+      form: '<form%<attributes>s>%<content>s</form>'
     }.freeze
 
     module_function
