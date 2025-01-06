@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-require_relative 'items/input'
-require_relative 'items/textarea'
-require_relative 'items/submit'
-
 module HexletCode
   class FormBuilder
     class ItemBuilder

@@ -1,10 +1,5 @@
 # frozen_string_literal: true
 
-require 'forwardable'
-
-require_relative 'form_renderer/tag_rendering'
-require_relative 'form_renderer/item_rendering'
-
 module HexletCode
   class FormRenderer
     include TagRendering

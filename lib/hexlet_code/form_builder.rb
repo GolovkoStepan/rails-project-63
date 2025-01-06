@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative 'form_builder/item_builder'
-
 module HexletCode
   class FormBuilder
     attr_reader :resource_object, :form_options, :form_elements
