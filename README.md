@@ -1,4 +1,3 @@
-### Hexlet tests and linter status:
 [![Actions Status](https://github.com/GolovkoStepan/rails-project-63/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/GolovkoStepan/rails-project-63/actions)
 
 # HexletCode
@@ -10,8 +9,8 @@
 Выполните следующие команды:
 
 ```bash
- bundle add hexlet_code
- bundle install
+bundle add hexlet_code
+bundle install
 ```
 
 ## Пример использования
@@ -36,4 +35,21 @@ end
   <textarea name="bio" class="text" cols="25" rows="40">hexlet</textarea>
   <input value="Save" class="submit" type="submit">
 </form>
+```
+
+## Описание команд Makefile
+
+Установка зависимостей:
+```bash
+make install
+```
+
+Запуск проверок кода rubocop:
+```bash
+make lint
+```
+
+Запуск тестов:
+```bash
+make test
 ```
