@@ -33,7 +33,7 @@ class TestHexletCode < Minitest::Test
     form_html = HexletCode.form_for(@user, url: '/profile', class: 'form') do |f|
       f.input :name, class: 'form-field'
       f.input :bio, as: :text, class: 'text', cols: 25
-      f.submit 'Save', class: 'submit'
+      f.submit class: 'submit'
     end
 
     assert { form_html == @form_with_inputs }

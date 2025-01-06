@@ -15,6 +15,10 @@ module HexletCode
         def value
           super || 'Save'
         end
+
+        def html_attributes
+          super.merge(value:)
+        end
       end
     end
   end
