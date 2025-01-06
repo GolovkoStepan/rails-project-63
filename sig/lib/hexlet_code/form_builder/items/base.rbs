@@ -1,0 +1,31 @@
+module HexletCode
+  class FormBuilder
+    module Items
+      class Base
+        @options: Hash[untyped, untyped]
+
+        attr_reader options: Hash[untyped, untyped]
+
+        def initialize: (?::Hash[untyped, untyped] options) -> void
+
+        def tag: () -> String?
+
+        def type: () -> String?
+
+        def content: () -> String?
+
+        def name: () -> String
+
+        def value: () -> String
+
+        def html_attributes: () -> Hash[untyped, untyped]
+
+        def label_needed?: () -> bool
+
+        def label_before?: () -> bool
+
+        def label_after?: () -> bool
+      end
+    end
+  end
+end

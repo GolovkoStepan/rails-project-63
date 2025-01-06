@@ -1,0 +1,17 @@
+module HexletCode
+  class FormBuilder
+    @resource_object: Struct[untyped]
+
+    attr_reader form_elements: Array[untyped]
+    attr_reader form_options: Hash[untyped, untyped]
+    attr_reader resource_object: Struct[untyped]
+
+    def input: -> void
+
+    def submit: -> void
+
+    private
+
+    def value_from_resource_object: -> untyped
+  end
+end

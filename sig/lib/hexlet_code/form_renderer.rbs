@@ -1,0 +1,11 @@
+module HexletCode
+  class FormRenderer
+    attr_reader form_builder: FormBuilder
+
+    def render_html: -> String
+
+    private
+
+    def render_form_items: -> String
+  end
+end

@@ -1,0 +1,17 @@
+module HexletCode
+  class FormRenderer
+    class ItemRendering
+      attr_reader form_element: untyped
+
+      def render_html: -> String
+
+      private
+
+      def field: -> String
+
+      def label: -> String
+
+      def with_indent: -> String
+    end
+  end
+end

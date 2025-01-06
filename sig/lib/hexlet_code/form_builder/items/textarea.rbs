@@ -1,0 +1,18 @@
+module HexletCode
+  class FormBuilder
+    module Items
+      class Textarea
+        DEFAULT_COLS: Integer
+        DEFAULT_ROWS: Integer
+
+        def content: -> String
+
+        def html_attributes: -> Hash[untyped, untyped]
+
+        def label_before?: -> bool
+
+        def tag: -> String
+      end
+    end
+  end
+end

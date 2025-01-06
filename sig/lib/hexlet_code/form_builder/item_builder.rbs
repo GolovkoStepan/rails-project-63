@@ -1,0 +1,9 @@
+module HexletCode
+  class FormBuilder
+    class ItemBuilder
+      MAPPINGS: Hash[Symbol, Class]
+
+      def self.build: (?::Hash[untyped, untyped] options) -> untyped
+    end
+  end
+end

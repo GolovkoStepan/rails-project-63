@@ -1,3 +1,5 @@
 module HexletCode
   VERSION: String
+
+  def self.form_for: -> String
 end

@@ -1,0 +1,9 @@
+module HexletCode
+  class FormRenderer
+    module TagRendering
+      TAGS_TEMPLATES: Hash[Symbol, String]
+
+      def render_tag: (String tag_name, ?::Hash[untyped, untyped] attributes) ?{ () -> untyped } -> untyped
+    end
+  end
+end
