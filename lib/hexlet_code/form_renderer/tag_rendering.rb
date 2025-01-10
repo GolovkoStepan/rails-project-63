@@ -3,25 +3,33 @@
 module HexletCode
   class FormRenderer
     module TagRendering
-      TAGS_TEMPLATES = {
-        br: '<br%<attributes>s>',
-        img: '<img%<attributes>s>',
-        input: '<input%<attributes>s>',
-        label: '<label%<attributes>s>%<content>s</label>',
-        div: '<div%<attributes>s>%<content>s</div>',
-        form: '<form%<attributes>s>%<content>s</form>',
-        textarea: '<textarea%<attributes>s>%<content>s</textarea>'
-      }.freeze
+      SINGLE_TAG_TEMPLATE = '<%<tag_name>s%<attributes>s>'
+      PAIRED_TAG_TEMPLATE = '<%<tag_name>s%<attributes>s>%<content>s</%<tag_name>s>'
 
-      def render_tag(tag_name, attributes = {})
-        attributes_str = attributes.map { |key, value| "#{key}=\"#{value}\"" }.join(' ')
-        attributes_str = attributes_str.empty? ? '' : " #{attributes_str}"
+      SINGLE_TAGS = %w[br img input].freeze
 
+      def render_tag(tag_name, attributes = {}, &)
+        if SINGLE_TAGS.include?(tag_name)
+          render_tag_by_template(SINGLE_TAG_TEMPLATE, tag_name, attributes, &)
+        else
+          render_tag_by_template(PAIRED_TAG_TEMPLATE, tag_name, attributes, &)
+        end
+      end
+
+      private
+
+      def render_tag_by_template(template, tag_name, attributes = {})
         format(
-          TAGS_TEMPLATES[tag_name.to_sym],
-          attributes: attributes_str,
+          template,
+          tag_name: tag_name,
+          attributes: attributes_to_string(attributes),
           content: (yield if block_given?)
         )
+      end
+
+      def attributes_to_string(attributes)
+        attributes_str = attributes.map { |key, value| "#{key}=\"#{value}\"" }.join(' ')
+        attributes_str.empty? ? '' : " #{attributes_str}"
       end
     end
   end

@@ -1,9 +1,20 @@
 module HexletCode
   class FormRenderer
     module TagRendering
-      TAGS_TEMPLATES: Hash[Symbol, String]
+      SINGLE_TAG_TEMPLATE: String
 
-      def render_tag: (String tag_name, ?::Hash[untyped, untyped] attributes) ?{ () -> untyped } -> untyped
+      PAIRED_TAG_TEMPLATE: String
+
+      SINGLE_TAGS: Array[String]
+
+      def render_tag: (String tag_name, ?Hash[untyped, untyped] attributes) { () -> untyped } -> String
+
+      private
+
+      def render_tag_by_template:
+        (String template, String tag_name, ?Hash[untyped, untyped] attributes) ?{ () -> untyped } -> String
+
+      def attributes_to_string: (Hash[untyped, untyped] attributes) -> String
     end
   end
 end
